@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Watch from './components/watch/Watch'
 import { useEffect } from 'react';
-import { addTols } from './utilities/Utilities';
+import { addTols, getStoredCart } from './utilities/Utilities';
 
 function App() {
   const [watches,setwatches]=useState([]);
@@ -15,6 +15,13 @@ function App() {
        
     })
   },[])
+  //load card form localStore
+  useEffect(()=>{
+   if(watches.length>0){
+      const storeCard = getStoredCart();
+      console.log(storeCard)
+   }
+  },[watches])
  const handelAddToCart = bottle =>{
     const newCart = [...cart,bottle]
    setCart(newCart)

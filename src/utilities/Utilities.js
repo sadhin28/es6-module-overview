@@ -18,4 +18,4 @@ const addTols = id=>{
  saveCartToLs(cart);
  
 }
-export{addTols}
+export{addTols, getStoredCart}
