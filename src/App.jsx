@@ -12,16 +12,18 @@ function App() {
        
     })
   },[])
- 
+ const handelAddToCart = bottle =>{
+    console.log(bottle)
+ }
  
  
   return(
     <>
-      <h1>Es6 Module Overview</h1>
+      <h1>Bottles</h1>
       
       <div style={{}} id='btnWatch' className='watchContainer'>
       {
-        watches.map(watch=><Watch key={watch.id} watch={watch}></Watch>)
+        watches.map(watch=><Watch handelAddToCart={handelAddToCart} key={watch.id} watch={watch}></Watch>)
       }
       </div>
     </>
