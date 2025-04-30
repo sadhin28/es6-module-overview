@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { addTols, getStoredCart } from './utilities/Utilities';
 
 function App() {
+
   const [watches,setwatches]=useState([]);
   const [cart,setCart]=useState([])
   useEffect(()=>{
@@ -15,6 +16,11 @@ function App() {
        
     })
   },[])
+  
+  const clearCart =()=>{
+    localStorage.clear();
+    window.location.reload();
+  }
   //load card form localStore
   useEffect(()=>{
    if(watches.length>0){
@@ -40,6 +46,7 @@ function App() {
   return(
     <>
       <h1>Bottles</h1>
+      <button  onClick={clearCart}>Clear Cart </button>
       <div>
            <h4>Cart: {cart.length}</h4>
            
