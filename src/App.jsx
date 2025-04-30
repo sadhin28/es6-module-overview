@@ -39,9 +39,11 @@ function App() {
   return (
     <>
       <h1>Es6 Module Overview</h1>
+      <div className='watchContainer'>
       {
         watches.map(watch=><Watch key={watch.id} watch={watch}></Watch>)
       }
+      </div>
     </>
   )
 }
