@@ -3,7 +3,7 @@ import './App.css'
 import Watch from './components/watch/Watch'
 import { useEffect } from 'react';
 import { addTols, getStoredCart } from './utilities/Utilities';
-
+import Cart from './components/Cart/Cart';
 function App() {
 
   const [watches,setwatches]=useState([]);
@@ -47,10 +47,10 @@ function App() {
     <>
       <h1>Bottles</h1>
       <button  onClick={clearCart}>Clear Cart </button>
-      <div>
-           <h4>Cart: {cart.length}</h4>
-           
-      </div>
+         <div className='carContainer'>
+         <Cart cart={cart}></Cart>
+         </div>
+          
       <div style={{}} id='btnWatch' className='watchContainer'>
       {
         watches.map(watch=><Watch handelAddToCart={handelAddToCart} key={watch.id} watch={watch}></Watch>)
