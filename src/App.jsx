@@ -19,7 +19,16 @@ function App() {
   useEffect(()=>{
    if(watches.length>0){
       const storeCard = getStoredCart();
-      console.log(storeCard)
+      console.log(storeCard, watches)
+      const savedCard = [];
+      for(const id of storeCard){
+         const bottle = watches.find(bottle =>bottle.id === id);
+         if(bottle){
+            savedCard.push(bottle)
+         }
+      }
+      console.log(savedCard)
+      setCart(savedCard)
    }
   },[watches])
  const handelAddToCart = bottle =>{
