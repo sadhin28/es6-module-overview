@@ -25,7 +25,7 @@ function App() {
   useEffect(()=>{
    if(watches.length>0){
       const storeCard = getStoredCart();
-      console.log(storeCard, watches)
+      // console.log(storeCard, watches)
       const savedCard = [];
       for(const id of storeCard){
          const bottle = watches.find(bottle =>bottle.id === id);
@@ -33,7 +33,7 @@ function App() {
             savedCard.push(bottle)
          }
       }
-      console.log(savedCard)
+      // console.log(savedCard)
       setCart(savedCard)
    }
   },[watches])
