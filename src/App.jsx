@@ -7,7 +7,10 @@ function App() {
   useEffect(()=>{
     fetch('Watches.json')
     .then(res => res.json())
-    .then(data=>setwatches(data))
+    .then(data=>{
+      setwatches(data)
+       
+    })
   },[])
   // const watches =[
   //   { "id": 1, "name": "Apple Watch Series 7", "price": 399, "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Apple_Watch_Series_7_Aluminum_Green.png/800px-Apple_Watch_Series_7_Aluminum_Green.png" },
