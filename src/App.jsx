@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Watch from './components/watch/Watch'
 import { useEffect } from 'react';
+import { addTols } from './utilities/Utilities';
 function App() {
   const [watches,setwatches]=useState([]);
   const [cart,setCart]=useState([])
@@ -15,7 +16,10 @@ function App() {
   },[])
  const handelAddToCart = bottle =>{
     const newCart = [...cart,bottle]
+    console.log(newCart)
    setCart(newCart)
+   
+
   
  }
  localStorage.setItem("cart",cart)

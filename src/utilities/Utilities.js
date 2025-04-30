@@ -6,11 +6,11 @@ const getStoredCart =()=>{
     return [];
 }
 const saveCartToLs = cart =>{
-    const cartStringyfy = JSON.stringify(cart);
-    localStorage.setItem('cart',cartStringyfy);
+    const cartStringyfyied = JSON.stringify(cart);
+    localStorage.setItem('cart',cartStringyfyied);
 }
 const addTols = id=>{
-    const cart = getStoredCart();
+    const cart = getstoredCart();
     cart.push(id);
    //save to local
    saveCartToLs(cart);
