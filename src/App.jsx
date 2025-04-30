@@ -13,18 +13,13 @@ function App() {
     })
   },[])
  
-  const handeledWatch=()=>{
-       
-  }
  
-  return (
+ 
+  return(
     <>
       <h1>Es6 Module Overview</h1>
-      <div className='buttonContainer'>
-         <button onClick={handeledWatch}>Watch</button>
-         <button>Bottle</button>
-      </div>
-      <div id='btnWatch' className='watchContainer'>
+      
+      <div style={{}} id='btnWatch' className='watchContainer'>
       {
         watches.map(watch=><Watch key={watch.id} watch={watch}></Watch>)
       }
