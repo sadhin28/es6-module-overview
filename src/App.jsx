@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 function App() {
   const [watches,setwatches]=useState([]);
   const [cart,setCart]=useState([])
-  console.log(cart)
   useEffect(()=>{
     fetch('Watches.json')
     .then(res => res.json())
@@ -16,15 +15,17 @@ function App() {
   },[])
  const handelAddToCart = bottle =>{
     const newCart = [...cart,bottle]
-    setCart(newCart)
+   setCart(newCart)
+  
  }
- 
+ localStorage.setItem("cart",cart)
  
   return(
     <>
       <h1>Bottles</h1>
       <div>
            <h4>Cart: {cart.length}</h4>
+           
       </div>
       <div style={{}} id='btnWatch' className='watchContainer'>
       {
