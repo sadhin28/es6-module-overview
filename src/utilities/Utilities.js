@@ -10,6 +10,7 @@ const saveCartToLs = cart =>{
     localStorage.setItem('cart',cartStringyfyied);
 }
 const addTols = id=>{
+  
     const cart = getstoredCart();
     cart.push(id);
    //save to local

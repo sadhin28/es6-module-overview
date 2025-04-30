@@ -16,8 +16,9 @@ function App() {
   },[])
  const handelAddToCart = bottle =>{
     const newCart = [...cart,bottle]
-    console.log(newCart)
-   setCart(newCart)
+    setCart(newCart)
+    // console.log(newCart)
+   addTols(bottle.id)
    
 
   

@@ -3,7 +3,7 @@ import './Watch.css'
 const Watch = ({watch,handelAddToCart}) => {
     
     const {name,price,img}=watch
-
+//    console.log(watch)
     return (
         <div className='watchContent'>
             <img src={img} alt="" />
