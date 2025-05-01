@@ -12,11 +12,19 @@ const saveCartToLs = cart =>{
     localStorage.setItem('cart',cartStringyfy)
 }
 
+
+
 const addTols = id=>{
  const cart = getStoredCart(id);
  cart.push(id);
  saveCartToLs(cart);
  
 }
- 
-export{addTols, getStoredCart}
+
+const removeFromLs =id=>{
+  const cart = getStoredCart();
+  //removing every id
+  const remaining = cart.filter(idx => idx !== id);
+  saveCartToLs(remaining)
+}
+export{addTols, getStoredCart,removeFromLs}

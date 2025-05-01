@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Watch from './components/watch/Watch'
 import { useEffect } from 'react';
-import { addTols, getStoredCart } from './utilities/Utilities';
+import { addTols, getStoredCart, removeFromLs } from './utilities/Utilities';
 import Cart from './components/Cart/Cart';
 function App() {
 
@@ -43,12 +43,17 @@ function App() {
    addTols(bottle.id)
  }
  
+ const handelRemoveFromCart = id =>{
+    const remainingCart = cart.filter(bottle=>bottle.id !== id)
+    setCart(remainingCart)
+    removeFromLs(id);
+ }
   return(
     <>
       <h1>Bottles</h1>
       <button  onClick={clearCart}>Clear Cart </button>
-         <div className='carContainer'>
-         <Cart cart={cart}></Cart>
+         <div className='watchContainer'>
+         <Cart handelRemoveFromCart={handelRemoveFromCart} cart={cart}></Cart>
          </div>
           
       <div style={{}} id='btnWatch' className='watchContainer'>
