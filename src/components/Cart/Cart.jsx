@@ -7,7 +7,7 @@ const Cart = ({cart}) => {
              <h4>Cart: {cart.length}</h4>
              <div className="cartImgContainer">
                 {
-                    cart.map(bottle=><img   src={bottle.img}></img>)
+                    cart.map(bottle=><img key={bottle.id}  src={bottle.img}></img>)
                 }
              </div>
         </div>
